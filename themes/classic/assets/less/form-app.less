@@ -1,0 +1,260 @@
+//
+// Form App
+// --------------------------------------------------
+
+/* Net Promoter Score */
+.nps-question .table {
+  margin-bottom: 10px;
+}
+.nps-question .table .table {
+  margin-bottom: 0;
+  background-color: transparent;
+}
+.nps-question .table>tbody>tr>td {
+  border: 0;
+  padding: 0;
+}
+.nps-question .help-block {
+  margin-bottom: 5px;
+}
+.nps-question .answer-container {
+  margin-top: 0;
+  min-height: .01%;
+  overflow-x: auto;
+}
+@media (max-width: @screen-xs-max) {
+  .nps-question .answer-container {
+    width: 100%;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+.nps-question .answer-container table {
+  width: 100% !important;
+}
+.nps-question .answer-container table .answer-label .label-visible {
+  padding: 0 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  width: 100px !important;
+}
+.nps-question .answer-container.lg {
+  width: 100%;
+}
+.nps-question .answer-container.md {
+  width: 75%;
+}
+.nps-question .answer-container.sm {
+  width: 50%;
+}
+.nps-question .answer-container .answer-label {
+  width: 33%;
+  padding: 5px 0;
+}
+.nps-question .answer-container .answer-input {
+  width: 9.090909090909092%;
+  text-align: center;
+  padding: 10px 5px;
+}
+.nps-question .answer-container .answer-input {
+  width: 9.090909090909092%;
+  text-align: center;
+  padding: 5px 1px;
+}
+.nps-question .answer-container .answer-input:first-child {
+  padding-left: 0;
+}
+.nps-question .answer-container .answer-input:last-child {
+  padding-right: 0;
+}
+.nps-question .answer-container .answer-input label span {
+  display: block;
+}
+.nps-question .answer-container .btn-nps {
+  width: 100%;
+  border-radius:4px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  -webkit-transition: all 100ms ease-in-out
+}
+.nps-question .answer-container .btn-label {
+  background-color: inherit;
+  color: inherit;
+  border: inherit;
+}
+.nps-question .answer-container .btn-primary.btn-nps {
+  background-color: #f1f2f3;
+  color: #434a54;
+  border: 1px solid #f1f2f3;
+}
+.nps-question .answer-container .btn-primary.btn-nps:hover {
+  background-color: #6e8292;
+  color: #FFFFFF;
+}
+.nps-question .answer-container input[type="radio"]:checked + .btn-primary.btn-nps {
+  color: #fff;
+  background-color: #586875;
+  border-color: #495661;
+}
+.nps-question .answer-container input[type="radio"]:checked + .btn-warning.btn-nps {
+  color: @btn-warning-color;
+  background-color: darken(@btn-warning-bg, 10%);
+  border-color: darken(@btn-warning-border, 12%);
+}
+.nps-question .answer-container input[type="radio"]:checked + .btn-danger.btn-nps {
+  color: @btn-danger-color;
+  background-color: darken(@btn-danger-bg, 10%);
+  border-color: darken(@btn-danger-border, 12%);
+}
+.nps-question .answer-container input[type="radio"]:checked + .btn-info.btn-nps {
+  color: @btn-info-color;
+  background-color: darken(@btn-info-bg, 10%);
+  border-color: darken(@btn-info-border, 12%);
+}
+.nps-question .answer-container input[type="radio"]:checked + .btn-success.btn-nps {
+  color: @btn-success-color;
+  background-color: darken(@btn-success-bg, 10%);
+  border-color: darken(@btn-success-border, 12%);
+}
+.nps-question .answer-container .btn-nps span {
+  text-align: center;
+  display: block;
+  font-weight: normal;
+}
+.nps-question .answer-container .btn-nps.disabled,
+.nps-question .answer-container .btn-nps[disabled],
+.nps-question .answer-container .btn-nps.disabled:hover,
+.nps-question .answer-container .btn-nps[disabled]:hover {
+  background-color: #f1f2f3;
+  color: inherit;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  opacity: .65;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/*
+ * Multi Step
+ */
+#form-app, #my-form {
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+  }
+  .form-action {
+    //margin-bottom: 15px;
+  }
+  .progress {
+    margin-top: 5px;
+    .progress-bar {
+      min-width: 2em;
+    }
+  }
+  .steps {
+    margin-bottom: 10px;
+    padding-top: 5px;
+    overflow: hidden;
+    text-align: center;
+
+    .step {
+      display: inline-block;
+      position: relative;
+      margin-right: -4px; /* Fix space between each step */
+      text-align: center;
+      min-height: 28px;
+      line-height: 28px;
+
+      &:before, &:after {
+        position: absolute;
+        background-color: #E6E9ED;
+        top: 11px;
+        margin-top: 0;
+        width: 50%;
+        height: 6px;
+        content: '';
+      }
+      &:before {
+        left: 0;
+      }
+      &:after {
+        right: 0;
+      }
+      &:first-child:before {
+        content: none;
+      }
+      &:last-child:after {
+        content: none;
+      }
+      &.no-stage:before, &.no-stage:after {
+        content: none;
+      }
+      &.current .stage {
+        background-color: #92a1ad;
+        color: #FFFFFF;
+      }
+      &.current:after, &.current:before {
+        background-color: #92a1ad;
+      }
+      &.success .stage {
+        background-color: #92a1ad;
+        color: #FFFFFF;
+      }
+      &.success:after, &.success:before {
+        background-color: #92a1ad;
+      }
+      .stage {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        background-color: #E6E9ED;
+        color: #627483;
+        text-align: center;
+        font-size: 18px;
+        position: relative;
+        z-index: 1;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+      }
+      .stage .glyphicon {
+        font-size: 15px;
+      }
+      .title {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+      &:first-child .title {
+        padding-left: 0;
+      }
+    }
+    .no-title {
+      width: 48px;
+      &:first-child {
+        width: 38px;
+        text-align: left;
+      }
+    }
+    .no-stage {
+      .title {
+        padding: 0 10px;
+        margin: 0 5px 5px 5px;
+        border: 1px solid #6e8292;
+        border-radius: 4px;
+        text-align: center;
+      }
+      &:first-child {
+        .title {
+          padding: 0 10px;
+        }
+      }
+      &.current {
+        .title {
+          color: #ffffff;
+          background-color: #6e8292;
+          border-color: #637584;
+        }
+      }
+    }
+  }
+}
